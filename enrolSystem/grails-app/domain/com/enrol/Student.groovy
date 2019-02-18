@@ -9,7 +9,17 @@ Boolean isFundingAvailable
 String studentEmail
 String studentUsername
 String studentPassword
-String course
+Course course
+
+static hasMany=[modules:Module]
+
+
+static belongsTo=[Module]
+
+
+String toString(){
+return studentName
+}
 
 
     static constraints = {

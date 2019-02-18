@@ -4,7 +4,7 @@ class Course {
 
 String department
 String courseTitle
-String courseLeader
+Lecturer courseLeader
 String courseCode 
 Date startDate
 Date endDate
@@ -12,6 +12,12 @@ String description
 int numberOfStudents
 Double tutionFees
 String studyMode
+static hasMany=[students:Student,lecturers:Lecturer,modules:Module]
+
+String toString(){
+
+return courseTitle
+}
 
 
     static constraints = {
@@ -25,5 +31,9 @@ description nullable: false, blank: false, maxSize: 5000, widget: 'textarea'
 numberOfStudents nullable: false, blank: false, min: 20, max: 60
 tutionFees nullable: false, blank: false, scale: 2
 studyMode nullable: false, blank: false, size: 1..20
+
+
     }
+
 }
+
